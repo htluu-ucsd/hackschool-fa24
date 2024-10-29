@@ -37,8 +37,11 @@ let tripObject = {
 };
 
 /* EDIT TRIPOBJECT HERE: */
+tripObject.tripLen = 3;
+tripObject.costPerDay = 360;
+const days = tripObject.costPerDay
 
-
+console.log(tripObject);
 
 ///////////////////////////
 
@@ -65,7 +68,17 @@ const tripObject2 = {
     numTravellers: 6,
 }
 /* MAKE YOUR FUNCTION HERE */
+function cheaperTrip(trip1, trip2){
+  let trip1Cost = trip1.tripLen * trip1.costPerDay / trip1.numTravellers;
+  let trip2Cost = trip2.tripLen * trip2.costPerDay / trip2.numTravellers;
 
+  if (trip1Cost > trip2Cost){
+    return trip1Cost;
+  }
+  else {
+    return trip2Cost;
+  }
+}
 
 ///////////////////////////
 
@@ -95,7 +108,14 @@ const destinations = [
 ]
 
 /* MAKE YOUR FUNCTION HERE */
-
+const isTripIncluded = (destinations, targetDestination) => {
+  for (destination of destinations){
+    if (destination === targetDestination){
+      return true;
+    }
+  }
+  return false;
+}
 
 ///////////////////////////
 
@@ -103,7 +123,7 @@ const destinations = [
     Uncomment the below line to test out your function.
     Feel free to test whatever target destination you'd like.
 */
-// console.log(isTripIncluded(destinations, ""));
+// console.log(isTripIncluded(destinations, "Honolulu"));
 
 
 /*
@@ -141,8 +161,16 @@ and handles success and errors using .then/catch.
 */ 
 
 // YOUR CODE HERE
-
+async function fetchExchangeRate(currency1, currency2){
+  let result = getExchangeRate(currency1, currency2);
+  result.then((successMessage) => {
+    console.log(successMessage);
+  })
+  .catch((errorMessage) => {
+    console.log(errorMessage);
+  });
+}
 // Example calls:
-// fetchExchangeRate('USD', 'EUR')
-// fetchExchangeRate('USD', 'GBP')  // This should trigger an error
+// fetchExchangeRate('USD', 'EUR');
+fetchExchangeRate('USD', 'GBP')  // This should trigger an error
 
