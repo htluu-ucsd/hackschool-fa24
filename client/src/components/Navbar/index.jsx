@@ -9,11 +9,12 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.title}>
-        <Link  href="index.html">HackTravels</Link >
+        <Image src={Image}/>
+        <Link href="/index">HackTravels</Link >
       </div>
       <div className={styles.title}>
-        <Link  href="addTrip.html">Add Trip</Link >
-        <Link  href="addActivity.html">Add Trip Activity</Link >
+        <Link href="/addTrip">Add Trip</Link >
+        <Link href="/addActivity">Add Trip Activity</Link >
       </div>
     </div>
   );
