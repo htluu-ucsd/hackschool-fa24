@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.title}>
-        <Image src={Image}/>
+        <Image src="/travel.png" width={50} height={50}/>
         <Link href="/index">HackTravels</Link >
       </div>
       <div className={styles.title}>
