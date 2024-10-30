@@ -9,8 +9,8 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.title}>
-        <Image src="/travel.png" width={50} height={50}/>
-        <Link href="/index">HackTravels</Link >
+        <Image src="/travel.png" width={20} height={20}/>
+        <Link href="/">HackTravels</Link >
       </div>
       <div className={styles.title}>
         <Link href="/addTrip">Add Trip</Link >
